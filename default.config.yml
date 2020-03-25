@@ -45,6 +45,7 @@ homebrew_cask_packages:
   - firefox
   - google-chrome
   - gpg-suite-no-mail
+  - karabiner-elements
   - mc
   - slack
   - vagrant
