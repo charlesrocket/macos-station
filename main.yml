@@ -44,7 +44,7 @@
 
     - name: Add Homebrew taps
       homebrew_tap:
-      name: "{{ homebrew_taps }}"
+        name: "{{ homebrew_taps }}"
       state: present
 
     - name: Upgrading Homebrew Packages
