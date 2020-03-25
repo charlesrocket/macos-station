@@ -1,11 +1,8 @@
-install_homebrew_if_missing: true
-upgrade_homebrew_packages: false
-
 homebrew_packages:
   - autoconf
-  - gettext
-  - ssh-copy-id
-  - wget
+  - git
+  - neofetch
+  - openssl
 
 homebrew_cask_packages:
   - firefox
