@@ -51,11 +51,13 @@
       homebrew_cask:
         name: "{{ homebrew_cask_packages }}"
         state: present
+      when: homebrew_check.stat.exists
 
     - name: Installing Homebrew Packages
       homebrew:
         name: "{{ homebrew_packages }}"
         state: present
+      when: homebrew_check.stat.exists
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
