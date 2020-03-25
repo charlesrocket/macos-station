@@ -3,15 +3,9 @@ upgrade_homebrew_packages: false
 
 homebrew_packages:
   - autoconf
-  - bash-completion
   - gettext
-  - sqlite
   - ssh-copy-id
-  - cowsay
-  - readline
-  - pv
   - wget
-  - wrk
 
 homebrew_cask_packages:
   - firefox
