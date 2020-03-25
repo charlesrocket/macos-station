@@ -1,3 +1,6 @@
+install_homebrew_if_missing: false
+upgrade_homebrew_packages: false
+
 homebrew_packages:
   - autoconf
   - git
