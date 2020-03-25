@@ -2,8 +2,6 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
-configure_terminal: yes
-configure_osx: no  
 install_homebrew_if_missing: true
 upgrade_homebrew_packages: true
 
