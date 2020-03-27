@@ -37,6 +37,8 @@
   tasks:
     - include_tasks: tasks/ansible-setup.yml
     
+    - include_tasks: tasks/hardening.yml
+    
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
