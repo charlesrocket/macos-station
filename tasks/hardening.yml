@@ -1,0 +1,8 @@
+---
+- name: Secure keyboard entry for Terminal
+  osx_defaults:
+    domain: com.apple.terminal
+    key: SecureKeyboardEntry
+    type: bool
+    value: true
+    state: present
