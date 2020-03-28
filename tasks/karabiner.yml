@@ -5,7 +5,7 @@
     state: directory
     recurse: yes
 
-- name: Copy Karabiner-Elements config file.
+- name: Copy Karabiner-Elements config file
   template:
     src: templates/karabiner.json
     dest: ~/.config/karabiner/karabiner.json
