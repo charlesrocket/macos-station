@@ -1,7 +1,12 @@
 ---
+- name: Create Karabiner folder
+  file: 
+    path: ~/.config/karabiner
+    state: directory
+    recurse: yes
+
 - name: Copy Karabiner-Elements config file.
   template:
     src: templates/karabiner.json
     dest: ~/.config/karabiner/karabiner.json
-    recurse: yes
     mode: 0644
