@@ -8,6 +8,7 @@
   copy:
     src: /templates/wallpaper.jpg
     dest: "/Users/{{ username }}/Pictures/tmp_wallpaper.jpg"
+    remote_src: no
     mode: '0644'
     force: no
 
