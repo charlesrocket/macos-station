@@ -17,6 +17,7 @@ dotfiles_files:
   - .zshrc
 
 homebrew_packages:
+  - ansible-lint
   - autoconf
   - bash-completion
   - doxygen
