@@ -46,6 +46,7 @@ homebrew_cask_packages:
   - atom
   - chromedriver
   - docker
+  - fastlane
   - firefox
   - google-chrome
   - gpg-suite-no-mail
