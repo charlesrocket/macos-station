@@ -4,7 +4,6 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: yes
 configure_karabiner: yes
 install_homebrew_if_missing: true
-upgrade_homebrew_packages: true
 
 dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
