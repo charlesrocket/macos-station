@@ -1,1 +1,7 @@
 ---
+# General
+- name: Switch to Dark mode
+  osx_defaults:
+    key: AppleInterfaceStyle
+    type: string
+    value: Dark
