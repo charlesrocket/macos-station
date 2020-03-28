@@ -23,6 +23,7 @@ homebrew_packages:
   - gettext
   - git
   - go
+  - hashcat
   - help2man
   - httpie
   - libevent
