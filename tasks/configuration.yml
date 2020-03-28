@@ -5,8 +5,8 @@
   register: username
   
 - name: Copy wallpaper
-  template:
-    src: templates/wallpaper.jpg
+  copy:
+    src: files/wallpaper.jpg
     dest: "/Users/{{ username }}/Pictures/tmp_wallpaper.jpg"
     mode: 0644
 
