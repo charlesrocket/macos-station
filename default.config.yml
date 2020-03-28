@@ -36,6 +36,7 @@ homebrew_packages:
   - openssl
   - php
   - ssh-copy-id
+  - wakeonlan
   - wget
 
 homebrew_taps:
