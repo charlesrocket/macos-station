@@ -43,6 +43,7 @@ homebrew_taps:
   - homebrew/cask
 
 homebrew_cask_packages:
+  - atom
   - chromedriver
   - docker
   - firefox
