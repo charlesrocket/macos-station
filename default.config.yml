@@ -26,6 +26,7 @@ homebrew_packages:
   - help2man
   - httpie
   - libevent
+  - mc
   - minisign
   - neofetch
   - nmap
