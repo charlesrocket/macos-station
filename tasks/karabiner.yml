@@ -2,5 +2,6 @@
 - name: Copy Karabiner-Elements config file.
   template:
     src: templates/karabiner.json
-    dest: ~/.config/karabiner
+    dest: ~/.config/karabiner/karabiner.json
+    recurse: yes
     mode: 0644
