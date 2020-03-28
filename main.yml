@@ -39,6 +39,9 @@
     
     - include_tasks: tasks/hardening.yml
     
+    - include_tasks: tasks/karabiner.yml
+      when: configure_karabiner
+    
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true

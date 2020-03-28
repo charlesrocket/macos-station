@@ -2,6 +2,7 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
+configure_karabiner: yes
 install_homebrew_if_missing: true
 upgrade_homebrew_packages: true
 

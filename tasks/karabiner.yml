@@ -1,0 +1,6 @@
+---
+- name: Copy Karabiner-Elements config file.
+  template:
+    src: templates/karabiner.json
+    dest: ~/.config/karabiner
+    mode: 0644
