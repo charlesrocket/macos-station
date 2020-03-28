@@ -5,12 +5,10 @@
   register: username
   
 - name: Copy wallpaper
-  copy:
+  template:
     src: templates/wallpaper.jpg
     dest: "/Users/{{ username }}/Pictures/tmp_wallpaper.jpg"
-    remote_src: no
-    mode: '0644'
-    force: no
+    mode: 0644
 
 - name: Set wallpaper
   shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/Users/{{ username }}/tmp_wallpaper.jpg'"
