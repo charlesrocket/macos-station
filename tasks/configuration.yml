@@ -9,6 +9,7 @@
     src: /files/wallpaper.jpg
     dest: "/Users/{{ username }}/Pictures/tmp_wallpaper.jpg"
     mode: '0644'
+    force: no
 
 - name: Set wallpaper
   shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/Users/{{ username }}/tmp_wallpaper.jpg'"
