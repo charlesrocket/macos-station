@@ -35,6 +35,12 @@
       tags: ['dotfiles']
 
   tasks:
+    - name: Create dotconfig folder
+      file: 
+        path: ~/.config
+        state: directory
+        recurse: yes
+
     - include_tasks: tasks/ansible-setup.yml
     
     - include_tasks: tasks/hardening.yml
