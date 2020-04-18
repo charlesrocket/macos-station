@@ -3,7 +3,6 @@ homebrew_packages:
   - git
   - neofetch
   - openssl
-  - tor
 
 homebrew_cask_packages:
   - firefox
