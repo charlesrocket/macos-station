@@ -19,6 +19,7 @@ homebrew_packages:
   - ansible-lint
   - autoconf
   - bash-completion
+  - burp-suite
   - doxygen
   - gettext
   - git
