@@ -75,3 +75,4 @@
     
     - name: Stop tor
       command: brew services stop tor
+      ignore_errors: yes
