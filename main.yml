@@ -74,4 +74,4 @@
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
     
     - name: Stop tor
-      command: "brew services stop tor
+      command: brew services stop tor
