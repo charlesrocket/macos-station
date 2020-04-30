@@ -22,3 +22,9 @@
     src: templates/mc_ini
     dest: ~/.config/mc/ini
     mode: 0644
+    
+- name: Copy tor config file
+  template:
+    src: templates/torrc
+    dest: /usr/local/etc/tor
+    mode: 0644
