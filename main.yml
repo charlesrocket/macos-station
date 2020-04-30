@@ -40,12 +40,6 @@
         path: ~/.config
         state: directory
         recurse: yes
-
-    - include_tasks: tasks/ansible-setup.yml
-  
-    - include_tasks: tasks/app-configs.yml
-    
-    - include_tasks: tasks/hardening.yml
     
     - name: Updating Homebrew
       homebrew:
@@ -71,6 +65,12 @@
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
+
+    - include_tasks: tasks/ansible-setup.yml
+  
+    - include_tasks: tasks/app-configs.yml
+    
+    - include_tasks: tasks/hardening.yml
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
