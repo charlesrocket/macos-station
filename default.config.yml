@@ -29,6 +29,7 @@ homebrew_packages:
   - help2man
   - httpie
   - libevent
+  - makepkg
   - mc
   - micro-snitch
   - minisign
