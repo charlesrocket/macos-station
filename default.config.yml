@@ -38,6 +38,7 @@ homebrew_packages:
   - node
   - nvm
   - openssl
+  - protobuf
   - php
   - ssh-copy-id
   - tor
