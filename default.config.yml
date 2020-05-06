@@ -53,6 +53,7 @@ homebrew_taps:
 
 homebrew_cask_packages:
   - atom
+  - balenaetcher
   - chromedriver
   - docker
   - fastlane
