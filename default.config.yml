@@ -65,6 +65,7 @@ homebrew_cask_packages:
   - mc
   - slack
   - vagrant
+  - virtualbox
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
