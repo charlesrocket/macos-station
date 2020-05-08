@@ -63,6 +63,7 @@ homebrew_cask_packages:
   - imageoptim
   - karabiner-elements
   - mc
+  - qmk-toolbox 
   - slack
   - vagrant
   - virtualbox
