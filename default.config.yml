@@ -62,7 +62,6 @@ homebrew_cask_packages:
   - gpg-suite-no-mail
   - imageoptim
   - karabiner-elements
-  - mc
   - qmk-toolbox 
   - slack
   - vagrant
