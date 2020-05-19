@@ -59,7 +59,6 @@ homebrew_cask_packages:
   - balenaetcher
   - chromedriver
   - docker
-  - fastlane
   - firefox
   - google-chrome
   - gpg-suite-no-mail
