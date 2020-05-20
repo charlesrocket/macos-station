@@ -30,6 +30,7 @@ homebrew_packages:
   - hashcat
   - help2man
   - httpie
+  - imagemagick
   - libevent
   - makepkg
   - mc
