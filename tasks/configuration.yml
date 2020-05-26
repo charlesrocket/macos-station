@@ -5,3 +5,7 @@
     key: AppleInterfaceStyle
     type: string
     value: Dark
+    
+- name: Add bong
+  command: nvram StartupMute=%00
+  become: yes
