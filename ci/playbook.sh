@@ -1,4 +1,6 @@
 #!/bin/bash
+sh -c "sudo chown -R runner /github"
+sh -c "sudo chmod -R 777 /github"
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
 ./uninstall.sh --force
