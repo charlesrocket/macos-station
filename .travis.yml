@@ -7,7 +7,7 @@ os: osx
 
 before_install:
   # Uninstall existing Homebrew installation.
-  - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
+  - curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
   - chmod +x ./uninstall.sh
   - ./uninstall.sh --force
   - sudo rm -rf /usr/local/Homebrew
