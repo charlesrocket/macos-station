@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo chown -R $USER:$USER /home/github/actions-runner/_work/macos-playbook
+sudo chown -R $USER:$USER /Users/runner
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
 ./uninstall.sh --force
