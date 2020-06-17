@@ -1,9 +1,4 @@
 #!/bin/bash
-sudo xattr -r -d com.apple.quarantine /Applications
-curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
-chmod +x ./uninstall.sh
-./uninstall.sh --force
-
 sudo easy_install pip
 sudo pip install ansible
 { echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg
