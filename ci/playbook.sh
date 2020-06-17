@@ -2,9 +2,6 @@
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall
 chmod +x ./uninstall
 ./uninstall --force
-sudo rm -rf /usr/local/Homebrew
-sudo rm -rf /usr/local/Caskroom
-sudo rm -rf /usr/local/bin/brew
 sudo easy_install pip
 sudo pip install ansible
 { echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg
