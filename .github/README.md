@@ -7,7 +7,7 @@ Ansible playbook for macOS (brew/dotfiles/configuration/hardening)
 
 ### Start
 
-Edit `requirements.yml` then run:
+Edit `requirements.yml`/`default.config.yml` then run:
 
 ```
 cp default.config.yml config.yml
