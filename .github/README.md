@@ -1,6 +1,6 @@
 # macOS playbook
 
-[![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/Ansible%20Playbook%20CI/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions)
+[![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/Playbook%20tests/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions)
 
 🚧
 
