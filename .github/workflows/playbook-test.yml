@@ -1,7 +1,4 @@
 name: Ansible Playbook CI
-branding:
-  icon: 'book'  
-  color: 'purple'
 
 on: [push, pull_request]
 
