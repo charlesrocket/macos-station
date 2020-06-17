@@ -1,4 +1,4 @@
-name: Ansible Playbook CI
+name: Playbook tests
 
 on: [push, pull_request]
 
