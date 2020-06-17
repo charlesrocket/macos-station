@@ -1,5 +1,5 @@
 #!/bin/bash
-xattr -r -d com.apple.quarantine /Applications
+sudo xattr -r -d com.apple.quarantine /Applications
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
 ./uninstall.sh --force
