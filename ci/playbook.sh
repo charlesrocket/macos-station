@@ -1,6 +1,5 @@
 #!/bin/bash
-sh -c "sudo chown -R runner /github"
-sh -c "sudo chmod -R 777 /github"
+sudo chown -R $USER:$USER /home/github/actions-runner/_work/macos-playbook
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
 ./uninstall.sh --force
