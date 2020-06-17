@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo chown -R $USER:$USER /Users/runner
+sudo chown -R $USER:$USER /Applications
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
 ./uninstall.sh --force
