@@ -1,8 +1,7 @@
 #!/bin/bash
-sudo chown -R $USER:$USER /Users/runner
 curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
 chmod +x ./uninstall.sh
-./uninstall.sh --force
+sudo -s ./uninstall.sh --force
 
 sudo easy_install pip
 sudo pip install ansible
