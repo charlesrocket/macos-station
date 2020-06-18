@@ -18,5 +18,8 @@
     value: '{{ item.value }}'
   loop:
     - { name: autohide, type: bool, value: false }
+    - { name: show-recent, type: bool, value: false }
+    - { name: magnification, type: bool, value: true }
     - { name: tilesize, type: float, value: 36 }
     - { name: largesize, type: float, value: 65 }
+    - { name: mineffect, type: string, value: scale }
