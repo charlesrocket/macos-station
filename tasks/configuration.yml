@@ -1,14 +1,15 @@
 ---
 # General
-- name: Switch to Dark mode
+- name: Tune interface
   osx_defaults:
-    key: AppleInterfaceStyle
-    type: string
-    value: Dark
-    
-- name: Add bong
-  command: nvram StartupMute=%00
-  become: yes
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: AppleInterfaceStyle, type: string,  value: Dark }
+    - { name: AppleHighlightColor, type: string, value: '1.000000 0.733333 0.721569 Red' }
+    - { name: AccentColor, type: int, value: 0 }
+    - { name: AppleAquaColorVariant, type: int, value: 1 }
   
 - name: Tune Dock
   osx_defaults:
@@ -23,3 +24,7 @@
     - { name: tilesize, type: float, value: 36 }
     - { name: largesize, type: float, value: 65 }
     - { name: mineffect, type: string, value: scale }
+    
+- name: Add bong
+  command: nvram StartupMute=%00
+  become: yes
