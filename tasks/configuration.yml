@@ -9,3 +9,14 @@
 - name: Add bong
   command: nvram StartupMute=%00
   become: yes
+  
+- name: Tune Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: autohide, type: bool, value: false }
+    - { name: tilesize, type: float, value: 36 }
+    - { name: largesize, type: float, value: 65 }
