@@ -29,6 +29,8 @@
         - not homebrew_check.stat.exists
         - install_homebrew_if_missing
 
+    - include_tasks: tasks/ohmyzsh.yml
+
   roles:
     - role: charlesrocket.dotfiles
       when: configure_dotfiles
