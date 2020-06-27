@@ -26,6 +26,7 @@ homebrew_packages:
   - gettext
   - git
   - go
+  - gzip
   - fastlane
   - hashcat
   - help2man
