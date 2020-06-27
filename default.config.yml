@@ -49,6 +49,7 @@ homebrew_packages:
   - ssh-copy-id
   - tor
   - travis
+  - unzip
   - wakeonlan
   - wget
 
