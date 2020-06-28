@@ -24,11 +24,11 @@ homebrew_packages:
   - coreutils
   - direnv
   - doxygen
+  - fastlane
   - gettext
   - git
   - go
   - gzip
-  - fastlane
   - hashcat
   - help2man
   - httpie
