@@ -48,6 +48,8 @@ homebrew_packages:
   - qmk
   - speedtest-cli
   - ssh-copy-id
+  - swiftformat
+  - swiftlint
   - tor
   - travis
   - unzip
