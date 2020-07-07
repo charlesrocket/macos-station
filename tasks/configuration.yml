@@ -1,5 +1,15 @@
 ---
 # General
+- name: Turn off Siri
+  osx_defaults:
+    domain: com.apple.assistant.support
+    key: '{{ item.name }}'
+    type: bool
+    value: '{{ item.value }}'
+  loop:
+    - { name: 'Assistant Enabled', value: false }
+    - { name: StatusMenuVisible, value: false }
+
 - name: Tune interface
   osx_defaults:
     key: '{{ item.name }}'
