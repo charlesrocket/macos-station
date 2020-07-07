@@ -63,7 +63,7 @@
         name: "{{ homebrew_packages }}"
         state: present
         
-    - name: Stop tor
+    - name: Stop Tor
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
