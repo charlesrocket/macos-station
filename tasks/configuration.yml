@@ -35,6 +35,6 @@
     - { name: largesize, type: float, value: 65 }
     - { name: mineffect, type: string, value: scale }
     
-- name: Add bong
+- name: Add Bong
   command: nvram StartupMute=%00
   become: yes
