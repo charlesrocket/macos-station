@@ -1,6 +1,5 @@
 homebrew_packages:
   - autoconf
-  - git
   - neofetch
   - openssl
 
