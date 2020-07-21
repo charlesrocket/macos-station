@@ -47,6 +47,7 @@ homebrew_packages:
   - protobuf
   - php
   - qmk
+  - rename
   - speedtest-cli
   - ssh-copy-id
   - swiftformat
