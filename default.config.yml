@@ -38,7 +38,6 @@ homebrew_packages:
   - libevent
   - makepkg
   - mc
-  - micro-snitch
   - minisign
   - neofetch
   - nmap
@@ -74,6 +73,7 @@ homebrew_cask_packages:
   - imageoptim
   - joplin
   - karabiner-elements
+  - micro-snitch
   - qmk-toolbox 
   - slack
   - vagrant
