@@ -78,6 +78,7 @@ homebrew_cask_packages:
   - slack
   - vagrant
   - virtualbox
+  - virtualbox-extension-pack
   - wireshark
 
 # Install packages from other package managers.
