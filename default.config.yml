@@ -35,6 +35,7 @@ homebrew_packages:
   - help2man
   - httpie
   - imagemagick
+  - ipcalc
   - iperf3
   - libevent
   - makepkg
