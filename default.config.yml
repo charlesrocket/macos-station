@@ -20,6 +20,7 @@ homebrew_packages:
   - autoconf
   - bash-completion
   - burp-suite
+  - clamav
   - clang-format
   - cmake
   - cocoapods
