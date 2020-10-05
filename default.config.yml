@@ -80,6 +80,7 @@ homebrew_cask_packages:
   - micro-snitch
   - qmk-toolbox 
   - slack
+  - unetbootin
   - vagrant
   - virtualbox
   - virtualbox-extension-pack
