@@ -38,7 +38,9 @@ homebrew_packages:
   - imagemagick
   - ipcalc
   - iperf3
+  - jq
   - libevent
+  - links
   - makepkg
   - mc
   - minisign
@@ -55,6 +57,7 @@ homebrew_packages:
   - ssh-copy-id
   - swiftformat
   - swiftlint
+  - tmux
   - tor
   - travis
   - unzip
