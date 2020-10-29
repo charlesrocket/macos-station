@@ -58,6 +58,7 @@ homebrew_packages:
   - ssh-copy-id
   - swiftformat
   - swiftlint
+  - tldr
   - tmux
   - tor
   - travis
