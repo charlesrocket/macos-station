@@ -64,6 +64,7 @@ homebrew_packages:
   - travis
   - unzip
   - wakeonlan
+  - weechat
   - wget
 
 homebrew_taps:
