@@ -44,6 +44,7 @@ homebrew_packages:
   - makepkg
   - mc
   - minisign
+  - ncdu
   - neofetch
   - nmap
   - node
