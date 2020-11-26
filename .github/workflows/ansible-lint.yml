@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     name: Linting
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
