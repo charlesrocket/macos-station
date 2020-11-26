@@ -40,3 +40,9 @@
   register: tuneui
   tags:
   - appearance
+
+- name: Add Bong
+  command: nvram StartupMute=%00
+  become: yes
+  when: tuneui.changed
+  check_mode: yes
