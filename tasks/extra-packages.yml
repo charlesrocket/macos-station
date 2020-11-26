@@ -4,7 +4,7 @@
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
     arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
     # Ansible 2.4 supports `global_command` making `working_dir` optional.
-    working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
+    working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('/Users/{{ ansible_user_id }}/.composer', true) }}"
   with_items: "{{ composer_packages }}"
 
 - name: Install global NPM packages.

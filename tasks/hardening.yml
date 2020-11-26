@@ -6,7 +6,7 @@
     type: bool
     value: true
     state: present
-    
+
 - name: Disable auto-opening of safe files for Safari
   osx_defaults:
     domain: com.apple.safari

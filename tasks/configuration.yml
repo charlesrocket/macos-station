@@ -20,7 +20,10 @@
     - { name: AppleHighlightColor, type: string, value: '1.000000 0.733333 0.721569 Red' }
     - { name: AccentColor, type: int, value: 0 }
     - { name: AppleAquaColorVariant, type: int, value: 1 }
-  
+  register: tuneui
+  tags:
+  - appearance
+
 - name: Tune Dock
   osx_defaults:
     domain: com.apple.dock
@@ -34,7 +37,6 @@
     - { name: tilesize, type: float, value: 36 }
     - { name: largesize, type: float, value: 65 }
     - { name: mineffect, type: string, value: scale }
-    
-- name: Add Bong
-  command: nvram StartupMute=%00
-  become: yes
+  register: tuneui
+  tags:
+  - appearance
