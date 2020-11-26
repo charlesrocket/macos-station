@@ -7,7 +7,7 @@ install_homebrew_if_missing: true
 
 dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Documents/GitHub/dotfiles
+dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
 dotfiles_files:
   - .bash_profile
   - .bashrc
