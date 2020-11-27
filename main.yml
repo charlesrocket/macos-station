@@ -17,7 +17,7 @@
         path: ~/.config
         mode: 0644
         state: directory
-        recurse: yes
+        owner: "{{ansible_user_id}}"
 
     - name: Ensuring Homebrew is present
       stat:
