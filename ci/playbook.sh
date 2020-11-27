@@ -11,7 +11,7 @@ ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml --syntax-check
 
 cp tests/config.yml config.yml
-ansible-playbook main.yml
+ansible-playbook main.yml -vvv
 
 idempotence=$(mktemp)
 ansible-playbook main.yml | tee -a ${idempotence}
