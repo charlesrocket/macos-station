@@ -40,7 +40,7 @@
   tasks:
     - name: Create dotconfig folder
       file:
-        path: /Users/{{ ansible_user_id }}/.config
+        path: ~/.config
         mode: 0644
         state: directory
         recurse: yes
