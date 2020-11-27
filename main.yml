@@ -11,6 +11,13 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+      
+    - name: Create dotconfig folder
+      file:
+        path: ~/.config
+        mode: 0644
+        state: directory
+        recurse: yes
 
     - name: Ensuring Homebrew is present
       stat:
@@ -38,13 +45,6 @@
       tags: ['dotfiles']
 
   tasks:
-    - name: Create dotconfig folder
-      file:
-        path: ~/.config
-        mode: 0644
-        state: directory
-        recurse: yes
-
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
