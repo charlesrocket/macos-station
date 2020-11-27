@@ -1,7 +1,7 @@
 ---
 - name: Create Karabiner folder
   file:
-    path: /Users/{{ ansible_user_id }}/.config/karabiner
+    path: ~/.config/karabiner
     mode: 0644
     owner: "{{ ansible_user_id }}"
     state: directory
@@ -9,12 +9,12 @@
 - name: Copy Karabiner-Elements config file
   template:
     src: templates/karabiner.json
-    dest: /Users/{{ ansible_user_id }}/.config/karabiner/karabiner.json
+    dest: ~/.config/karabiner/karabiner.json
     mode: 0644
 
 - name: Create Midnight Commander folder
   file:
-    path: /Users/{{ ansible_user_id }}/.config/mc
+    path: ~/.config/mc
     mode: 0644
     owner: "{{ ansible_user_id }}"
     state: directory
