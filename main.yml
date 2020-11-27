@@ -42,6 +42,7 @@
       file:
         path: /Users/{{ ansible_user_id }}/.config
         mode: 0644
+        umask: 0022
         state: directory
         recurse: yes
 
