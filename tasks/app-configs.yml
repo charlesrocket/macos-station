@@ -4,7 +4,6 @@
     path: /Users/{{ ansible_user_id }}/.config/karabiner
     mode: 0644
     state: directory
-    recurse: yes
 
 - name: Copy Karabiner-Elements config file
   template:
@@ -17,7 +16,6 @@
     path: /Users/{{ ansible_user_id }}/.config/mc
     mode: 0644
     state: directory
-    recurse: yes
 
 - name: Copy Midnight Commander config file
   template:
