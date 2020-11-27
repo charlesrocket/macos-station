@@ -10,7 +10,7 @@ echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml --syntax-check
 
-cp tests/config.yml config.yml
+cp ci/config.yml config.yml
 ansible-playbook main.yml -vvv
 
 idempotence=$(mktemp)
