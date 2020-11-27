@@ -11,7 +11,7 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
-      
+
     - name: Create dotconfig folder
       file:
         path: ~/.config
