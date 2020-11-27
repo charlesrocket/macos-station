@@ -3,6 +3,7 @@
   file:
     path: /Users/{{ ansible_user_id }}/.config/karabiner
     mode: 0644
+    owner: "{{ ansible_user_id }}"
     state: directory
 
 - name: Copy Karabiner-Elements config file
@@ -15,6 +16,7 @@
   file:
     path: /Users/{{ ansible_user_id }}/.config/mc
     mode: 0644
+    owner: "{{ ansible_user_id }}"
     state: directory
 
 - name: Copy Midnight Commander config file
