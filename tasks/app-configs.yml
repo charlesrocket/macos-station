@@ -1,30 +1,39 @@
 ---
-- name: Create Karabiner folder
-  file: 
-    path: ~/.config/karabiner
+- name: Create dotconfig folder
+  file:
+    path: ~/.config
+    mode: 0755
     state: directory
-    recurse: yes
+    owner: "{{ ansible_user_id }}"
+
+- name: Create Karabiner folder
+  file:
+    path: ~/.config/karabiner
+    mode: 0755
+    state: directory
+    owner: "{{ ansible_user_id }}"
 
 - name: Copy Karabiner-Elements config file
   template:
     src: templates/karabiner.json
     dest: ~/.config/karabiner/karabiner.json
-    mode: 0644
-    
+    mode: u=rw,g=r,o=r
+
 - name: Create Midnight Commander folder
-  file: 
+  file:
     path: ~/.config/mc
+    mode: 0755
     state: directory
-    recurse: yes
+    owner: "{{ ansible_user_id }}"
 
 - name: Copy Midnight Commander config file
   template:
     src: templates/mc_ini
-    dest: ~/.config/mc/ini
-    mode: 0644
-    
+    dest: /Users/{{ ansible_user_id }}/.config/mc/ini
+    mode: 0755
+
 - name: Copy tor config file
   template:
     src: templates/torrc
     dest: /usr/local/etc/tor
-    mode: 0644
+    mode: 0755

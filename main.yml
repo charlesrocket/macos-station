@@ -6,11 +6,12 @@
     - default.config.yml
 
   pre_tasks:
-    - include_vars: "{{ item }}"
+    - name: Load config.yml
+      include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
-      
+
     - name: Ensuring Homebrew is present
       stat:
         path: /usr/local/bin/brew
@@ -37,12 +38,6 @@
       tags: ['dotfiles']
 
   tasks:
-    - name: Create dotconfig folder
-      file: 
-        path: ~/.config
-        state: directory
-        recurse: yes
-    
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
@@ -62,16 +57,16 @@
       homebrew:
         name: "{{ homebrew_packages }}"
         state: present
-        
+
     - name: Stop Tor
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
 
     - include_tasks: tasks/ansible-setup.yml
-  
+
     - include_tasks: tasks/app-configs.yml
-    
+
     - include_tasks: tasks/hardening.yml
 
     - name: Run configured post-provision ansible task files.
@@ -79,4 +74,3 @@
       loop_control:
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
-  

@@ -1,7 +1,0 @@
-homebrew_packages:
-  - autoconf
-  - neofetch
-  - openssl
-
-homebrew_cask_packages:
-  - slack
