@@ -1,15 +1,39 @@
-name: Playbook tests
+name: playbook tests
 
 on: [push, pull_request]
 
 jobs:
-  build:
-
-    runs-on: macOS-latest
-    
+  tests:
+    name: playbook tests
+    runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Test playbook
-      run:  ci/playbook.sh
+      - uses: actions/checkout@v2
+      - name: prepare
+        run: |
+          curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
+          chmod +x ./uninstall.sh
+          sudo ./uninstall.sh --force
+          sudo rm -rf /usr/local/Homebrew
+          sudo rm -rf /usr/local/Caskroom
+          sudo rm -rf /usr/local/bin/brew
+          sudo rm -rf /Applications/Firefox.app
+          sudo rm -rf /Applications/Google\ Chrome.app
+          sudo pip3 install ansible
+          cp ci/config.yml config.yml
+          ansible-galaxy install -r requirements.yml
+      
+      - name: syntax check
+        run: ansible-playbook main.yml --syntax-check
+
+      - name: test playbook
+        run: ansible-playbook main.yml
+        env:
+          ANSIBLE_FORCE_COLOR: '1'
+
+      - name: idempotence check
+        run: |
+          idempotence=$(mktemp)
+          ansible-playbook main.yml | tee -a ${idempotence}
+          tail ${idempotence} | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+        env:
+          ANSIBLE_FORCE_COLOR: '1'
