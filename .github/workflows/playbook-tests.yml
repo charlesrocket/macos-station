@@ -28,7 +28,7 @@ jobs:
         run: ansible-playbook main.yml --syntax-check
 
       - name: test playbook
-        run: ansible-playbook main.yml
+        run: ansible-playbook main.yml -vvvv
         env:
           ANSIBLE_FORCE_COLOR: '1'
 
