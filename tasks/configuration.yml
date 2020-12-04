@@ -47,4 +47,3 @@
   command: nvram StartupMute=%00
   become: yes
   when: configure_ui
-  check_mode: yes
