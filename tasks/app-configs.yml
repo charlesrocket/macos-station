@@ -1,4 +1,11 @@
 ---
+- name: Create dotconfig folder
+  file:
+    path: ~/.config
+    mode: 0644
+    state: directory
+    owner: "{{ ansible_user_id }}"  
+  
 - name: Create Karabiner folder
   file:
     path: ~/.config/karabiner

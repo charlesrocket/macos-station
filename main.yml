@@ -12,13 +12,6 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
-    - name: Create dotconfig folder
-      file:
-        path: ~/.config
-        mode: 0644
-        state: directory
-        owner: "{{ ansible_user_id }}"
-
     - name: Ensuring Homebrew is present
       stat:
         path: /usr/local/bin/brew
