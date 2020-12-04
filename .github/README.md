@@ -1,5 +1,5 @@
 # macOS playbook
-[![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/playbook%20tests/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions) [![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/Ansible%20Lint/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions)
+[![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/playbook%20tests/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions) [![Actions Status](https://github.com/charlesrocket/macos-playbook/workflows/ansible%20lint/badge.svg)](https://github.com/charlesrocket/macos-playbook/actions)
 
 🚧
 
