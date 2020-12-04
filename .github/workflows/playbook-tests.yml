@@ -19,7 +19,9 @@ jobs:
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
           sudo pip3 install ansible
-          cp ci/config.yml config.yml
+          cp test/ansible.cfg ./ansible.cfg
+          cp test/inventory ./inventory
+          cp test/config.yml ./config.yml
           ansible-galaxy install -r requirements.yml
       
       - name: syntax check
