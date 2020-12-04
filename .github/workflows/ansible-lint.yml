@@ -1,15 +1,15 @@
-name: Ansible Lint
+name: ansible lint
 
 on: [push, pull_request]
 
 jobs:
   build:
-    name: Linting
+    name: linting
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Lint Ansible Playbook
+    - name: lint playbook
       uses: ansible/ansible-lint-action@master
       with:
         targets: main.yml
