@@ -5,7 +5,6 @@
     mode: 0644
     state: directory
     owner: "{{ ansible_user_id }}"
-  become: True
 
 - name: Create Karabiner folder
   file:
