@@ -49,7 +49,7 @@
       homebrew:
         name: "{{ homebrew_packages }}"
         state: present
-        
+
     - name: Make sure Tor service is stopped
       command: brew services stop tor
       ignore_errors: yes
