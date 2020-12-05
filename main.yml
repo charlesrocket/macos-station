@@ -30,16 +30,6 @@
         - not homebrew_check.stat.exists
         - install_homebrew_if_missing
 
-    - include_tasks: tasks/ohmyzsh.yml
-
-  roles:
-    - role: charlesrocket.dotfiles
-      when: configure_dotfiles
-      tags: ['dotfiles']
-
-    - role: rvm.ruby
-
-  tasks:
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
@@ -59,12 +49,22 @@
       homebrew:
         name: "{{ homebrew_packages }}"
         state: present
-
-    - name: Stop Tor
+        
+    - name: Make sure Tor service is stopped
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
 
+    - include_tasks: tasks/ohmyzsh.yml
+
+  roles:
+    - role: charlesrocket.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+
+    - role: rvm.ruby
+
+  tasks:
     - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/app-configs.yml
