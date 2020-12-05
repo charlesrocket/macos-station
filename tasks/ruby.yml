@@ -1,0 +1,69 @@
+---
+- name: Check installation
+  command: rvm current
+  register: rvm_installed
+  changed_when: rvm_installed is failed
+  ignore_errors: true
+
+- name: Install RVM GPG keys
+  command: gpg --keyserver "hkp://pool.sks-keyservers.net" --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  register: result
+  when: rvm_installed is failed
+
+- name: Download installer
+  get_url:
+    url: https://get.rvm.io
+    dest: "{{ ansible_env.HOME }}/install-rvm.sh"
+    mode: u+rwx
+  when: rvm_installed is failed
+
+- name: Check install script
+  stat:
+    path: "{{ ansible_env.HOME }}/install-rvm.sh"
+  register: stat_install_rvm
+
+- name: Install rvm
+  command: "{{ ansible_env.HOME }}/install-rvm.sh stable"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.rvm"
+  register: rvm_install_result
+  when: stat_install_rvm.stat.exists
+
+- name: Set shell config file variable
+  set_fact:
+    shell_config_file: '.zshrc'
+
+- name: Check shell config file exists
+  stat:
+    path: "{{ ansible_env.HOME }}/{{ shell_config_file }}"
+  register: shell_config_file_stat
+
+- name: Run post install script
+  shell: "source {{ ansible_env.HOME }}/{{ shell_config_file }} && {{ ansible_env.HOME }}/.rvm/scripts/rvm"
+  args:
+    executable: zsh
+  when:
+    - rvm_install_result.rc is defined and rvm_install_result.rc == 0
+    - not ansible_check_mode
+
+- name: Configure rvm
+  command: rvm autolibs homebrew
+  changed_when: False
+  when: not ansible_check_mode
+
+- name: Install a Ruby version via RVM
+  command: rvm install {{ ruby_version }}
+  register: rvm_installed
+  when: rvm_installed.stderr is defined and "'Already installed' not in rvm_installed.stderr"
+
+- name: Set Default Ruby
+  command: rvm --default use {{ ruby_version }}
+  when: make_default_ruby
+  
+- name: Update rvm
+  command: rvm get head
+  changed_when: False
+  when:
+    - rvm_install_result.rc is defined and rvm_install_result.rc == 0
+    - not ansible_check_mode

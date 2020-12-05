@@ -2,14 +2,6 @@ configure_dotfiles: yes
 configure_ui: yes
 configure_karabiner: yes
 
-rvm1_bundler_install: True
-rvm1_user: '{{ ansible_user_id }}'
-rvm1_install_path: '~/.rvm'
-rvm1_rvm_version: 'stable'
-rvm1_rvm_check_for_updates: True
-rvm1_autolib_mode: 4
-rvm1_rubies: ['ruby-2.7.2']
-
 dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
@@ -29,3 +21,11 @@ homebrew_packages:
 homebrew_cask_packages:
   - gpg-suite-no-mail
   - slack
+  
+ruby_version: 2.7.1
+make_default_ruby: True
+
+gem_packages:
+  - name: bundler
+    state: present
+    version: "~> 1.15.1"
