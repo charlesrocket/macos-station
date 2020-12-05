@@ -30,4 +30,5 @@ homebrew_packages:
   - openssl
 
 homebrew_cask_packages:
+  - gpg-suite-no-mail
   - slack
