@@ -37,6 +37,8 @@
       when: configure_dotfiles
       tags: ['dotfiles']
 
+    - role: rvm.ruby
+
   tasks:
     - name: Updating Homebrew
       homebrew:
