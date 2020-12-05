@@ -1,7 +1,6 @@
 configure_dotfiles: yes
 configure_ui: yes
 configure_karabiner: yes
-install_homebrew_if_missing: true
 
 rvm1_bundler_install: True
 rvm1_user: '{{ ansible_user_id }}'
@@ -24,6 +23,7 @@ dotfiles_files:
   - .gitignore
   - .zshrc
 
+install_homebrew_if_missing: true
 homebrew_packages:
   - autoconf
   - neofetch
