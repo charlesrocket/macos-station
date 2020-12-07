@@ -2,6 +2,9 @@ configure_dotfiles: yes
 configure_ui: yes
 configure_karabiner: yes
 
+configure_ruby: yes
+ruby_version: 2.7.2
+
 dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
