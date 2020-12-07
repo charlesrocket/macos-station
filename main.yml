@@ -68,7 +68,7 @@
     - include_tasks: tasks/app-configs.yml
 
     - include_tasks: tasks/hardening.yml
-    
+
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
