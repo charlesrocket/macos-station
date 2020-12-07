@@ -12,6 +12,15 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
+    - name: Check for oh-my-zsh
+      stat:
+        path: /Users/{{ ansible_user_id }}/.oh-my-zsh
+      register: stat_oh_my_zsh_result
+
+    - name: Install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      when: not stat_oh_my_zsh_result.stat.exists
+
     - name: Ensuring Homebrew is present
       stat:
         path: /usr/local/bin/brew
@@ -54,8 +63,6 @@
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
-
-    - include_tasks: tasks/ohmyzsh.yml
 
   roles:
     - role: charlesrocket.dotfiles
