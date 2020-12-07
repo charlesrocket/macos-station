@@ -68,6 +68,9 @@
     - include_tasks: tasks/app-configs.yml
 
     - include_tasks: tasks/hardening.yml
+    
+    - include_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
