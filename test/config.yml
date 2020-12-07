@@ -17,8 +17,7 @@ dotfiles_files:
 
 install_homebrew_if_missing: true
 homebrew_packages:
-  - autoconf
-  - neofetch
+  - direnv
   - node
   - rbenv
 
