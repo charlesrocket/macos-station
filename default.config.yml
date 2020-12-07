@@ -55,6 +55,7 @@ homebrew_packages:
   - protobuf
   - php
   - qmk
+  - rbenv
   - rename
   - speedtest-cli
   - ssh-copy-id

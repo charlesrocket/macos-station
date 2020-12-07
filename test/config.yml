@@ -16,14 +16,12 @@ install_homebrew_if_missing: true
 homebrew_packages:
   - autoconf
   - neofetch
-  - openssl
+  - node
+  - rbenv
 
 homebrew_cask_packages:
   - gpg-suite-no-mail
   - slack
-  
-ruby_version: 2.7.1
-make_default_ruby: True
 
 gem_packages:
   - name: bundler
