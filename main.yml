@@ -63,8 +63,6 @@
       tags: ['dotfiles']
 
   tasks:
-    - include_tasks: tasks/ruby.yml
-
     - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/app-configs.yml
