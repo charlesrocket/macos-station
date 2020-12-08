@@ -1,22 +1,25 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_ui: yes
-configure_karabiner: yes
+dotfiles_repo: "https://github.com/charlesrocket/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: false
+dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
-configure_ruby: yes
-ruby_version: 2.7.2
-
-dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
+dotfiles_home: "~"
 dotfiles_files:
   - .bash_profile
   - .bashrc
   - .gitconfig
   - .gitignore
   - .zshrc
+
+configure_dotfiles: yes
+configure_ui: yes
+configure_karabiner: yes
+
+configure_ruby: yes
+ruby_version: 2.7.2
 
 install_homebrew_if_missing: true
 homebrew_packages:
