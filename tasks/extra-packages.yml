@@ -1,4 +1,12 @@
 ---
+- name: Install ruby {{ ruby_version }}
+  command: "rbenv install {{ ruby_version }}"
+  when: configure_ruby
+
+- name: Set default ruby {{ ruby_version }}
+  command: "rbenv global {{ ruby_version }}"
+  when: configure_ruby
+
 - name: Install global Composer packages.
   composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
@@ -29,6 +37,6 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
-    user_install: no
+    user_install: yes
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ gem_packages }}"
