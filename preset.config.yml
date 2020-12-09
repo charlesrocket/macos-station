@@ -1,0 +1,115 @@
+---
+downloads: ~/.ansible-downloads/
+
+dotfiles_repo: "https://github.com/charlesrocket/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: "~/Documents/dotfiles"
+
+dotfiles_home: "~"
+dotfiles_files:
+  - .bash_profile
+  - .bashrc
+  - .gitconfig
+  - .gitignore
+  - .zshrc
+
+configure_dotfiles: yes
+configure_ui: yes
+configure_karabiner: yes
+
+configure_ruby: yes
+ruby_version: 2.7.2
+
+install_homebrew_if_missing: true
+homebrew_packages:
+  - ansible-lint
+  - autoconf
+  - bash-completion
+  - burp-suite
+  - clamav
+  - clang-format
+  - cmake
+  - cocoapods
+  - coreutils
+  - direnv
+  - doxygen
+  - fastlane
+  - gettext
+  - git
+  - go
+  - gzip
+  - hashcat
+  - help2man
+  - httpie
+  - imagemagick
+  - ipcalc
+  - iperf3
+  - jq
+  - libevent
+  - links
+  - makepkg
+  - mc
+  - minisign
+  - ncdu
+  - neofetch
+  - nmap
+  - node
+  - nvm
+  - pam_yubico
+  - openssl
+  - protobuf
+  - php
+  - qmk
+  - rbenv
+  - rename
+  - ruby-build
+  - speedtest-cli
+  - ssh-copy-id
+  - swiftformat
+  - swiftlint
+  - tldr
+  - tmux
+  - tor
+  - unzip
+  - wakeonlan
+  - weechat
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_packages:
+  - atom
+  - balenaetcher
+  - chromedriver
+  - docker
+  - dropbox
+  - firefox
+  - google-chrome
+  - gpg-suite-no-mail
+  - imageoptim
+  - joplin
+  - karabiner-elements
+  - micro-snitch
+  - qmk-toolbox 
+  - slack
+  - unetbootin
+  - vagrant
+  - virtualbox
+  - virtualbox-extension-pack
+  - wireshark
+
+composer_packages: []
+
+gem_packages:
+  - name: bundler
+    state: present
+    version: "~> 1.15.1"
+
+npm_packages: []
+
+pip_packages: []
+
+post_provision_tasks: []
