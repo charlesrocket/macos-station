@@ -43,6 +43,7 @@
       homebrew:
         update_homebrew: true
       when: homebrew_check.stat.exists
+      changed_when: False
 
     - name: Add Homebrew taps
       homebrew_tap:
