@@ -12,6 +12,15 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
+    - name: Check for oh-my-zsh
+      stat:
+        path: /Users/{{ ansible_user_id }}/.oh-my-zsh
+      register: stat_oh_my_zsh_result
+
+    - name: Install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      when: not stat_oh_my_zsh_result.stat.exists
+
     - name: Ensuring Homebrew is present
       stat:
         path: /usr/local/bin/brew
@@ -30,27 +39,15 @@
         - not homebrew_check.stat.exists
         - install_homebrew_if_missing
 
-    - include_tasks: tasks/ohmyzsh.yml
-
-  roles:
-    - role: charlesrocket.dotfiles
-      when: configure_dotfiles
-      tags: ['dotfiles']
-
-  tasks:
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
       when: homebrew_check.stat.exists
+      changed_when: False
 
     - name: Add Homebrew taps
       homebrew_tap:
         name: "{{ homebrew_taps }}"
-        state: present
-
-    - name: Installing Homebrew Cask Packages
-      homebrew_cask:
-        name: "{{ homebrew_cask_packages }}"
         state: present
 
     - name: Installing Homebrew Packages
@@ -58,16 +55,30 @@
         name: "{{ homebrew_packages }}"
         state: present
 
-    - name: Stop Tor
+    - name: Installing Homebrew Cask Packages
+      homebrew_cask:
+        name: "{{ homebrew_cask_packages }}"
+        state: present
+
+    - name: Make sure Tor service is stopped
       command: brew services stop tor
       ignore_errors: yes
       changed_when: False
 
+  roles:
+    - role: charlesrocket.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+
+  tasks:
     - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/app-configs.yml
 
     - include_tasks: tasks/hardening.yml
+
+    - include_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"

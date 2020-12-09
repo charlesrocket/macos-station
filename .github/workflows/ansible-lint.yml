@@ -4,12 +4,12 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: linting
+    name: Linting
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: lint playbook
+    - name: Lint playbook
       uses: ansible/ansible-lint-action@master
       with:
         targets: main.yml

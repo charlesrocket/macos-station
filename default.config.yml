@@ -1,14 +1,12 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_ui: yes
-configure_karabiner: yes
-install_homebrew_if_missing: true
+dotfiles_repo: "https://github.com/charlesrocket/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
-dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
+dotfiles_home: "~"
 dotfiles_files:
   - .bash_profile
   - .bashrc
@@ -16,83 +14,27 @@ dotfiles_files:
   - .gitignore
   - .zshrc
 
+configure_dotfiles: yes
+configure_ui: yes
+configure_karabiner: no
+
+configure_ruby: yes
+ruby_version: 2.7.2
+
+install_homebrew_if_missing: true
 homebrew_packages:
-  - ansible-lint
-  - autoconf
-  - bash-completion
-  - burp-suite
-  - clamav
-  - clang-format
-  - cmake
-  - cocoapods
-  - coreutils
   - direnv
-  - doxygen
-  - fastlane
-  - gettext
-  - git
-  - go
-  - gzip
-  - hashcat
-  - help2man
-  - httpie
-  - imagemagick
-  - ipcalc
-  - iperf3
-  - jq
-  - libevent
-  - links
-  - makepkg
-  - mc
-  - minisign
-  - ncdu
-  - neofetch
-  - nmap
   - node
-  - nvm
-  - pam_yubico
-  - openssl
-  - protobuf
-  - php
-  - qmk
-  - rename
-  - speedtest-cli
-  - ssh-copy-id
-  - swiftformat
-  - swiftlint
-  - tldr
-  - tmux
-  - tor
-  - travis
-  - unzip
-  - wakeonlan
-  - weechat
-  - wget
+  - rbenv
+  - ruby-build
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
 
 homebrew_cask_packages:
-  - atom
-  - balenaetcher
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
-  - google-chrome
   - gpg-suite-no-mail
-  - imageoptim
-  - joplin
-  - karabiner-elements
-  - micro-snitch
-  - qmk-toolbox 
   - slack
-  - unetbootin
-  - vagrant
-  - virtualbox
-  - virtualbox-extension-pack
-  - wireshark
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
@@ -103,8 +45,9 @@ composer_packages: []
   #   version: "^8.1" # default: N/A
 gem_packages: []
   # - name: bundler
-  #   state: present # present/absent/latest, default: present
-  #   version: "~> 1.15.1" # default: N/A
+  #   state: present
+  #   version: "~> 1.15.1"
+
 npm_packages: []
   # - name: webpack
   #   state: present # present/absent/latest, default: present

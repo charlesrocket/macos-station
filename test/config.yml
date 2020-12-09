@@ -1,11 +1,9 @@
-configure_dotfiles: yes
-configure_ui: yes
-configure_karabiner: yes
-install_homebrew_if_missing: true
+dotfiles_repo: "https://github.com/charlesrocket/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
-dotfiles_repo: https://github.com/charlesrocket/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: /Users/{{ ansible_user_id }}/Documents/GitHub/dotfiles
+dotfiles_home: "~"
 dotfiles_files:
   - .bash_profile
   - .bashrc
@@ -13,10 +11,20 @@ dotfiles_files:
   - .gitignore
   - .zshrc
 
+configure_dotfiles: yes
+configure_ui: yes
+configure_karabiner: yes
+
+configure_ruby: yes
+ruby_version: 2.7.2
+
+install_homebrew_if_missing: true
 homebrew_packages:
-  - autoconf
-  - neofetch
-  - openssl
+  - direnv
+  - node
+  - rbenv
+  - ruby-build
 
 homebrew_cask_packages:
+  - gpg-suite-no-mail
   - slack
