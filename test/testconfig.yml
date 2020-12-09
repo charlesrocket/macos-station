@@ -22,9 +22,16 @@ install_homebrew_if_missing: true
 homebrew_packages:
   - direnv
   - node
+  - python3
   - rbenv
   - ruby-build
 
 homebrew_cask_packages:
   - gpg-suite-no-mail
   - slack
+
+pip_packages:
+  - name: virtualenv
+    state: present 
+    version: "20.2.2"
+    executable: pip3
