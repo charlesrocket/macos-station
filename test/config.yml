@@ -28,8 +28,3 @@ homebrew_packages:
 homebrew_cask_packages:
   - gpg-suite-no-mail
   - slack
-
-gem_packages:
-  - name: bundler
-    state: present
-    version: "~> 1.15.1"
