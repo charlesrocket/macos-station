@@ -3,7 +3,7 @@
   command: "rbenv install {{ ruby_version }}"
   when: configure_ruby
   register: rbenv_inst
-  failed_when: rbenv_inst.rc != 0
+  failed_when: rbenv_inst.rc != 0 and rbenv_inst.rc != 1
 
 - name: Set default ruby {{ ruby_version }}
   command: "rbenv global {{ ruby_version }}"
