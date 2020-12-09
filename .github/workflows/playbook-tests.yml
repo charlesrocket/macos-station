@@ -21,7 +21,7 @@ jobs:
           sudo pip3 install ansible
           cp test/ansible.cfg ./ansible.cfg
           cp test/inventory ./inventory
-          cp test/config.yml ./config.yml
+          cp test/testconfig.yml ./config.yml
           ansible-galaxy install -r requirements.yml
       
       - name: Syntax check
