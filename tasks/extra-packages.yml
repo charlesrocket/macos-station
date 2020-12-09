@@ -4,10 +4,12 @@
   when: configure_ruby
   register: rbenv_inst
   failed_when: rbenv_inst.rc != 0 and rbenv_inst.rc != 1
+  changed_when: rbenv_inst.rc == 0
 
 - name: Set default ruby {{ ruby_version }}
   command: "rbenv global {{ ruby_version }}"
   when: configure_ruby
+  changed_when: false
 
 - name: Install global Composer packages.
   composer:
