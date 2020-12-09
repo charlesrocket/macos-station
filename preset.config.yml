@@ -60,6 +60,7 @@ homebrew_packages:
   - openssl
   - protobuf
   - php
+  - python3
   - qmk
   - rbenv
   - rename
@@ -110,6 +111,10 @@ gem_packages:
 
 npm_packages: []
 
-pip_packages: []
+pip_packages:
+  - name: virtualenv
+    state: present 
+    version: "20.2.2"
+    executable: pip3
 
 post_provision_tasks: []

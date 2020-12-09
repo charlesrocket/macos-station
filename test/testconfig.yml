@@ -22,6 +22,7 @@ install_homebrew_if_missing: true
 homebrew_packages:
   - direnv
   - node
+  - python3
   - rbenv
   - ruby-build
 
