@@ -12,7 +12,7 @@ Edit `requirements.yml`/`default.config.yml` then run:
 ```
 cp default.config.yml config.yml
 ansible-galaxy install -r requirements.yml
-ansible-playbook main.yml
+ansible-playbook main.yml -i inventory --ask-become-pass
 ```
 
 *Layout based on geerlingguy's [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)*
