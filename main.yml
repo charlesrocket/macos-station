@@ -73,6 +73,8 @@
   tasks:
     - include_tasks: tasks/ansible-setup.yml
 
+    - include_tasks: tasks/configuration.yml
+
     - include_tasks: tasks/app-configs.yml
 
     - include_tasks: tasks/hardening.yml
