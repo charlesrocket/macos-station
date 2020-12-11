@@ -80,6 +80,7 @@ homebrew_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - qmk/qmk
 
 homebrew_cask_packages:
   - atom
