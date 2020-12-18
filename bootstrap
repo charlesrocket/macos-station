@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+xcode-select --install
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install ansible
+
+git clone https://github.com/charlesrocket/macos-playbook
+
+cd macos-playbook
+cp preset.config.yml config.yml
+
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml -i inventory --ask-become-pass

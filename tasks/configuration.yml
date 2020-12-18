@@ -46,4 +46,5 @@
 - name: Add Bong
   command: nvram StartupMute=%00
   become: yes
+  changed_when: false
   when: configure_ui
