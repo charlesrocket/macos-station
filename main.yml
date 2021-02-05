@@ -38,6 +38,8 @@
       when:
         - not homebrew_check.stat.exists
         - install_homebrew_if_missing
+      become: True
+      become_user: "{{ ansible_user_id }}"
 
     - name: Updating Homebrew
       homebrew:
