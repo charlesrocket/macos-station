@@ -95,7 +95,7 @@ homebrew_cask_packages:
   - joplin
   - karabiner-elements
   - micro-snitch
-  - qmk-toolbox 
+  - qmk-toolbox
   - slack
   - unetbootin
   - vagrant
@@ -114,7 +114,7 @@ npm_packages: []
 
 pip_packages:
   - name: virtualenv
-    state: present 
+    state: present
     version: "20.2.2"
     executable: pip3
 
