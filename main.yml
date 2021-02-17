@@ -42,6 +42,7 @@
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
+        upgrade_all: yes
       when: homebrew_check.stat.exists
       changed_when: False
 
