@@ -96,7 +96,6 @@ homebrew_cask_packages:
   - joplin
   - karabiner-elements
   - micro-snitch
-  - qmk-toolbox
   - slack
   - unetbootin
   - vagrant
