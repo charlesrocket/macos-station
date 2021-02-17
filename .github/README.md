@@ -8,7 +8,6 @@ Ansible playbook for macOS (brew/dotfiles/configuration/hardening)
 Edit `requirements.yml`/`default.config.yml` then run:
 
 ```
-cp default.config.yml config.yml
 ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml -i inventory --ask-become-pass
 ```
