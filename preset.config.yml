@@ -16,6 +16,7 @@ dotfiles_files:
 
 configure_dotfiles: yes
 configure_ui: yes
+configure_settings: yes
 configure_karabiner: yes
 
 configure_ruby: yes
