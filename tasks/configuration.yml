@@ -70,4 +70,16 @@
   when: configure_ui
   tags:
   - appearance
+
+- name: Tune Terminal
+  osx_defaults:
+    domain: com.apple.Terminal
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: "Default Window Settings", type: string, value: Homebrew }
+  register: tuneapps
+  when: configure_apps
+  tags:
   - app-conf
