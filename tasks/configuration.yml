@@ -48,7 +48,7 @@
     value: '{{ item.value }}'
   loop:
     - { name: autohide, type: int, value: 0 }
-    - { name: show-recent, type: bool, value: false }
+    - { name: show-recent, type: int, value: 0 }
     - { name: magnification, type: int, value: 1 }
     - { name: tilesize, type: float, value: 37 }
     - { name: largesize, type: float, value: 65 }
