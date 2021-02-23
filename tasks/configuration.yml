@@ -80,7 +80,6 @@
   loop:
     - { name: "Default Window Settings", type: string, value: Homebrew }
     - { name: "Startup Window Settings", type: string, value: Homebrew }
-    - { name: "SecureKeyboardEntry", type: int, value: 1 }
   register: tuneapps
   when: configure_apps
   tags:
