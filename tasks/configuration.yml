@@ -25,6 +25,21 @@
   tags:
   - appearance
 
+- name: Tune settings
+  osx_defaults:
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: NSAutomaticCapitalizationEnabled, type: int, value: 0 }
+    - { name: NSAutomaticSpellingCorrectionEnabled, type: int, value: 0 }
+    - { name: NSAutomaticTextCompletionEnabled, type: int, value: 0 }
+
+  register: tunesettings
+  when: configure_settings
+  tags:
+  - settings
+
 - name: Tune Dock
   osx_defaults:
     domain: com.apple.dock
@@ -42,9 +57,4 @@
   when: configure_ui
   tags:
   - appearance
-
-- name: Add Bong
-  command: nvram StartupMute=%00
-  become: yes
-  changed_when: false
-  when: configure_ui
+  - app-conf
