@@ -40,6 +40,19 @@
   tags:
   - settings
 
+- name: Tune sound
+  osx_defaults:
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: com.apple.sound.beep.flash, type: int, value: 1 }
+    - { name: com.apple.sound.beep.sound, type: string, value: '/System/Library/Sounds/Submarine.aiff' }
+  register: tunesettings
+  when: configure_settings
+  tags:
+  - settings
+
 - name: Tune Dock
   osx_defaults:
     domain: com.apple.dock
