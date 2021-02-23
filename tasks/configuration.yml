@@ -16,7 +16,7 @@
     type: '{{ item.type }}'
     value: '{{ item.value }}'
   loop:
-    - { name: AppleInterfaceStyle, type: string,  value: Dark }
+    - { name: AppleInterfaceStyle, type: string, value: Dark }
     - { name: AppleHighlightColor, type: string, value: '1.000000 0.733333 0.721569 Red' }
     - { name: AccentColor, type: int, value: 0 }
     - { name: AppleAquaColorVariant, type: int, value: 1 }
