@@ -47,9 +47,9 @@
     type: '{{ item.type }}'
     value: '{{ item.value }}'
   loop:
-    - { name: autohide, type: bool, value: false }
+    - { name: autohide, type: int, value: 0 }
     - { name: show-recent, type: bool, value: false }
-    - { name: magnification, type: bool, value: true }
+    - { name: magnification, type: int, value: 1 }
     - { name: tilesize, type: float, value: 37 }
     - { name: largesize, type: float, value: 65 }
     - { name: mineffect, type: string, value: scale }
