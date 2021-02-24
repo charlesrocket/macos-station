@@ -14,7 +14,7 @@ dotfiles_files:
   - .gitignore
   - .zshrc
 
-configure_dotfiles: no
+configure_dotfiles: yes
 configure_ui: yes
 configure_apps: yes
 configure_settings: yes
