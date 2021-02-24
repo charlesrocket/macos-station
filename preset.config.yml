@@ -70,8 +70,6 @@ homebrew_packages:
   - ruby-build
   - speedtest-cli
   - ssh-copy-id
-  - swiftformat
-  - swiftlint
   - tldr
   - tmux
   - tor
