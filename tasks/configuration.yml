@@ -84,3 +84,20 @@
   when: configure_apps
   tags:
   - app-conf
+
+- name: Tune Finder
+  osx_defaults:
+    domain: com.apple.finder
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { name: ShowPathbar, type: int, value: 1 }
+    - { name: ShowStatusBar, type: int, value: 1 }
+    - { name: ShowRemovableMediaOnDesktop, type: int, value: 0 }
+    - { name: ShowHardDrivesOnDesktop, type: int, value: 0 }
+    - { name: ShowExternalHardDrivesOnDesktop, type: int, value: 1 }
+  register: tuneapps
+  when: configure_apps
+  tags:
+  - app-conf
