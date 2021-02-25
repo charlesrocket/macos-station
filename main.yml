@@ -72,7 +72,7 @@
       tags: ['dotfiles']
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
+#   - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/configuration.yml
 
