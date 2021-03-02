@@ -85,6 +85,19 @@
   tags:
   - app-conf
 
+- name: Tune Safari
+  osx_defaults:
+    domain: '{{ item.domain }}'
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  loop:
+    - { domain: com.apple.Safari.SandboxBroker, name: ShowDevelopMenu, type: int, value: 1 }
+  register: tuneapps
+  when: configure_apps
+  tags:
+  - app-conf
+
 - name: Tune Finder
   osx_defaults:
     domain: com.apple.finder
