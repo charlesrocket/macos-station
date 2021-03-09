@@ -119,6 +119,9 @@
     - { name: ShowRemovableMediaOnDesktop, type: int, value: 0 }
     - { name: ShowHardDrivesOnDesktop, type: int, value: 0 }
     - { name: ShowExternalHardDrivesOnDesktop, type: int, value: 1 }
+    - { name: FXEnableExtensionChangeWarning, type: int, value: 0 }
+    - { name: FXRemoveOldTrashItems, type: int, value: 1 }
+    - { name: WarnOnEmptyTrash, type: int, value: 0 }
   register: tuneapps
   when: configure_apps
   tags:
