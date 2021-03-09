@@ -38,6 +38,17 @@
     - { name: NSAutomaticSpellingCorrectionEnabled, type: int, value: 0 }
     - { name: NSAutomaticTextCompletionEnabled, type: int, value: 0 }
 
+- name: Tune system
+  osx_defaults:
+    domain: com.apple.systempreferences
+    key: '{{ item.name }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+    state: present
+  loop:
+    - { name: NSQuitAlwaysKeepsWindows, type: int, value: 0 }
+    - { name: ShowAllMode, type: int, value: 0 }
+
   register: tunesettings
   when: configure_settings
   tags:
