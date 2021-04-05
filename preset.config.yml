@@ -34,6 +34,7 @@ homebrew_packages:
   - cmake
   - cocoapods
   - coreutils
+  - crystal
   - direnv
   - doxygen
   - fastlane
