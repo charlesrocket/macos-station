@@ -44,6 +44,7 @@ homebrew_packages:
   - gzip
   - hashcat
   - help2man
+  - heroku
   - httpie
   - imagemagick
   - ipcalc
@@ -82,6 +83,7 @@ homebrew_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - heroku/brew
   - qmk/qmk
 
 homebrew_cask_packages:
