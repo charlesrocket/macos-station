@@ -26,6 +26,7 @@ ruby_version: 3.0.0
 install_homebrew_if_missing: true
 homebrew_packages:
   - ansible-lint
+  - arduino
   - autoconf
   - bash-completion
   - burp-suite
