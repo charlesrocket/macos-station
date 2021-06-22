@@ -27,6 +27,7 @@ install_homebrew_if_missing: true
 homebrew_packages:
   - ansible-lint
   - arduino
+  - arduino-cli
   - autoconf
   - bash-completion
   - burp-suite
