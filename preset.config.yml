@@ -98,6 +98,7 @@ homebrew_cask_packages:
   - google-chrome
   - gpg-suite-no-mail
   - gqrx
+  - hex-fiend
   - imageoptim
   - joplin
   - karabiner-elements
