@@ -69,6 +69,7 @@ homebrew_packages:
   - protobuf
   - php
   - python3
+  - qemu
   - qmk
   - rbenv
   - rename
