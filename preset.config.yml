@@ -110,6 +110,7 @@ homebrew_cask_packages:
   - vagrant
   - virtualbox
   - virtualbox-extension-pack
+  - visual-studio-code
   - wireshark
 
 composer_packages: []
