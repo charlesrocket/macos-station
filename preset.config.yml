@@ -104,6 +104,7 @@ homebrew_cask_packages:
   - imageoptim
   - joplin
   - karabiner-elements
+  - lastfm
   - oversight
   - slack
   - unetbootin
