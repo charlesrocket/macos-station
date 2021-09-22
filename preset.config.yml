@@ -99,6 +99,7 @@ homebrew_cask_packages:
   - docker
   - dropbox
   - firefox
+  - ghidra
   - google-chrome
   - gpg-suite-no-mail
   - gqrx
