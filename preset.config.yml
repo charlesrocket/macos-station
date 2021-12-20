@@ -21,7 +21,7 @@ configure_settings: yes
 configure_karabiner: yes
 
 configure_ruby: yes
-ruby_version: 3.0.0
+ruby_version: 3.0.3
 
 install_homebrew_if_missing: true
 homebrew_packages:
