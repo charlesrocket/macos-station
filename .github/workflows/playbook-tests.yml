@@ -22,7 +22,8 @@ jobs:
           sudo rm -rf /usr/local/bin/brew
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
-          sudo pip3 install ansible
+          python3 -m pip install --upgrade pip
+          sudo python3 -m pip install ansible
           cp test/ansible.cfg ./ansible.cfg
           cp test/inventory ./inventory
           ansible-galaxy install -r requirements.yml
