@@ -29,6 +29,7 @@ homebrew_packages:
   - arduino
   - arduino-cli
   - autoconf
+  - automake
   - bash-completion
   - burp-suite
   - clamav
@@ -81,6 +82,7 @@ homebrew_packages:
   - tldr
   - tmux
   - tor
+  - unibilium
   - unzip
   - wakeonlan
   - weechat
