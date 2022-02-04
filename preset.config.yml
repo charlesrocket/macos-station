@@ -87,6 +87,7 @@ homebrew_packages:
   - wakeonlan
   - weechat
   - wget
+  - wireguard-tools
 
 homebrew_taps:
   - homebrew/core
