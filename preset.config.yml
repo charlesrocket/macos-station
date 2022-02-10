@@ -112,6 +112,7 @@ homebrew_cask_packages:
   - karabiner-elements
   - lastfm
   - oversight
+  - raspberry-pi-imager
   - slack
   - unetbootin
   - vagrant
