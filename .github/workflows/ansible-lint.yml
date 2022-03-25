@@ -14,8 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Lint playbook
-      uses: ansible/ansible-lint-action@master
+      uses: ansible/ansible-lint-action@main
       with:
-        targets: main.yml
-        override-deps: ""
-        args: ""
+        args: "main.yml"
