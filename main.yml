@@ -63,8 +63,9 @@
 
     - name: Make sure Tor service is stopped
       command: brew services stop tor
-      ignore_errors: yes
-      changed_when: False
+      register: tor
+      changed_when: false
+      failed_when: "'Error:' in tor.stdout"
 
   roles:
     - role: charlesrocket.dotfiles
