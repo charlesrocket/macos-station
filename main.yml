@@ -7,62 +7,62 @@
 
   pre_tasks:
     - name: Load config.yml
-      include_vars: "{{ item }}"
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
     - name: Check for oh-my-zsh
-      stat:
+      ansible.builtin.stat:
         path: /Users/{{ ansible_user_id }}/.oh-my-zsh
       register: stat_oh_my_zsh_result
 
     - name: Install oh-my-zsh
-      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       when: not stat_oh_my_zsh_result.stat.exists
 
     - name: Ensuring Homebrew is present
-      stat:
+      ansible.builtin.stat:
         path: /usr/local/bin/brew
       register: homebrew_check
 
     - name: Fail if no Homebrew detected
-      fail:
+      ansible.builtin.fail:
         msg: Installing from http://brew.sh/
       when:
         - not homebrew_check.stat.exists
         - not install_homebrew_if_missing
 
     - name: Installing Homebrew
-      shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       when:
         - not homebrew_check.stat.exists
         - install_homebrew_if_missing
 
     - name: Updating Homebrew
-      homebrew:
+      community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
       when: homebrew_check.stat.exists
       changed_when: false
 
     - name: Add Homebrew taps
-      homebrew_tap:
+      community.general.homebrew_tap:
         name: "{{ homebrew_taps }}"
         state: present
 
     - name: Installing Homebrew Packages
-      homebrew:
+      community.general.homebrew:
         name: "{{ homebrew_packages }}"
         state: present
 
     - name: Installing Homebrew Cask Packages
-      homebrew_cask:
+      community.general.homebrew_cask:
         name: "{{ homebrew_cask_packages }}"
         state: present
 
     - name: Make sure Tor service is stopped
-      command: brew services stop tor
+      ansible.builtin.command: brew services stop tor
       register: tor
       changed_when: false
       failed_when: "'Error:' in tor.stdout"

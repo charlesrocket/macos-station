@@ -1,13 +1,13 @@
 ---
 - name: Install ruby {{ ruby_version }}
-  command: "rbenv install {{ ruby_version }}"
+  ansible.builtin.command: "rbenv install {{ ruby_version }}"
   when: configure_ruby
   register: rbenv_inst
   failed_when: rbenv_inst.rc != 0 and rbenv_inst.rc != 1
   changed_when: rbenv_inst.rc == 0
 
 - name: Set default ruby {{ ruby_version }}
-  command: "rbenv global {{ ruby_version }}"
+  ansible.builtin.command: "rbenv global {{ ruby_version }}"
   when: configure_ruby
   changed_when: false
 
@@ -29,7 +29,7 @@
   with_items: "{{ npm_packages }}"
 
 - name: Install global Pip packages.
-  pip:
+  ansible.builtin.pip:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
