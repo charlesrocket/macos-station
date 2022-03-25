@@ -8,8 +8,8 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: 'Assistant Enabled', value: false }
-    - { name: StatusMenuVisible, value: false }
+    - {name: 'Assistant Enabled', value: false}
+    - {name: StatusMenuVisible, value: false}
 
 - name: Tune interface
   osx_defaults:
@@ -18,14 +18,14 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: AppleInterfaceStyle, type: string, value: Dark }
-    - { name: AppleHighlightColor, type: string, value: '1.000000 0.733333 0.721569 Red' }
-    - { name: AccentColor, type: int, value: 0 }
-    - { name: AppleAquaColorVariant, type: int, value: 1 }
+    - {name: AppleInterfaceStyle, type: string, value: Dark}
+    - {name: AppleHighlightColor, type: string, value: '1.000000 0.733333 0.721569 Red'}
+    - {name: AccentColor, type: int, value: 0}
+    - {name: AppleAquaColorVariant, type: int, value: 1}
   register: tuneui
   when: configure_ui
   tags:
-  - appearance
+    - appearance
 
 - name: Tune settings
   osx_defaults:
@@ -34,9 +34,9 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: NSAutomaticCapitalizationEnabled, type: int, value: 0 }
-    - { name: NSAutomaticSpellingCorrectionEnabled, type: int, value: 0 }
-    - { name: NSAutomaticTextCompletionEnabled, type: int, value: 0 }
+    - {name: NSAutomaticCapitalizationEnabled, type: int, value: 0}
+    - {name: NSAutomaticSpellingCorrectionEnabled, type: int, value: 0}
+    - {name: NSAutomaticTextCompletionEnabled, type: int, value: 0}
 
 - name: Tune system
   osx_defaults:
@@ -46,13 +46,13 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: NSQuitAlwaysKeepsWindows, type: int, value: 0 }
-    - { name: ShowAllMode, type: int, value: 0 }
+    - {name: NSQuitAlwaysKeepsWindows, type: int, value: 0}
+    - {name: ShowAllMode, type: int, value: 0}
 
   register: tunesettings
   when: configure_settings
   tags:
-  - settings
+    - settings
 
 - name: Tune sound
   osx_defaults:
@@ -61,12 +61,12 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: com.apple.sound.beep.flash, type: int, value: 1 }
-    - { name: com.apple.sound.beep.sound, type: string, value: '/System/Library/Sounds/Submarine.aiff' }
+    - {name: com.apple.sound.beep.flash, type: int, value: 1}
+    - {name: com.apple.sound.beep.sound, type: string, value: '/System/Library/Sounds/Submarine.aiff'}
   register: tunesettings
   when: configure_settings
   tags:
-  - settings
+    - settings
 
 - name: Tune Dock
   osx_defaults:
@@ -76,16 +76,16 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: autohide, type: int, value: 0 }
-    - { name: show-recent, type: int, value: 0 }
-    - { name: magnification, type: int, value: 1 }
-    - { name: tilesize, type: float, value: 37 }
-    - { name: largesize, type: float, value: 65 }
-    - { name: mineffect, type: string, value: scale }
+    - {name: autohide, type: int, value: 0}
+    - {name: show-recent, type: int, value: 0}
+    - {name: magnification, type: int, value: 1}
+    - {name: tilesize, type: float, value: 37}
+    - {name: largesize, type: float, value: 65}
+    - {name: mineffect, type: string, value: scale}
   register: tuneui
   when: configure_ui
   tags:
-  - appearance
+    - appearance
 
 - name: Tune Terminal
   osx_defaults:
@@ -95,12 +95,12 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: "Default Window Settings", type: string, value: Homebrew }
-    - { name: "Startup Window Settings", type: string, value: Homebrew }
+    - {name: "Default Window Settings", type: string, value: Homebrew}
+    - {name: "Startup Window Settings", type: string, value: Homebrew}
   register: tuneapps
   when: configure_apps
   tags:
-  - app-conf
+    - app-conf
 
 - name: Tune Safari
   osx_defaults:
@@ -110,12 +110,12 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { domain: com.apple.Safari.SandboxBroker, name: ShowDevelopMenu, type: int, value: 1 }
-    - { domain: com.apple.Safari, name: AutoOpenSafeDownloads, type: int, value: 0 }
+    - {domain: com.apple.Safari.SandboxBroker, name: ShowDevelopMenu, type: int, value: 1}
+    - {domain: com.apple.Safari, name: AutoOpenSafeDownloads, type: int, value: 0}
   register: tuneapps
   when: configure_apps
   tags:
-  - app-conf
+    - app-conf
 
 - name: Tune Finder
   osx_defaults:
@@ -125,15 +125,15 @@
     value: '{{ item.value }}'
     state: present
   loop:
-    - { name: ShowPathbar, type: int, value: 1 }
-    - { name: ShowStatusBar, type: int, value: 1 }
-    - { name: ShowRemovableMediaOnDesktop, type: int, value: 0 }
-    - { name: ShowHardDrivesOnDesktop, type: int, value: 0 }
-    - { name: ShowExternalHardDrivesOnDesktop, type: int, value: 1 }
-    - { name: FXEnableExtensionChangeWarning, type: int, value: 0 }
-    - { name: FXRemoveOldTrashItems, type: int, value: 1 }
-    - { name: WarnOnEmptyTrash, type: int, value: 0 }
+    - {name: ShowPathbar, type: int, value: 1}
+    - {name: ShowStatusBar, type: int, value: 1}
+    - {name: ShowRemovableMediaOnDesktop, type: int, value: 0}
+    - {name: ShowHardDrivesOnDesktop, type: int, value: 0}
+    - {name: ShowExternalHardDrivesOnDesktop, type: int, value: 1}
+    - {name: FXEnableExtensionChangeWarning, type: int, value: 0}
+    - {name: FXRemoveOldTrashItems, type: int, value: 1}
+    - {name: WarnOnEmptyTrash, type: int, value: 0}
   register: tuneapps
   when: configure_apps
   tags:
-  - app-conf
+    - app-conf

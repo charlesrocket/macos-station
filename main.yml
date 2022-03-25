@@ -42,9 +42,9 @@
     - name: Updating Homebrew
       homebrew:
         update_homebrew: true
-        upgrade_all: yes
+        upgrade_all: true
       when: homebrew_check.stat.exists
-      changed_when: False
+      changed_when: false
 
     - name: Add Homebrew taps
       homebrew_tap:
