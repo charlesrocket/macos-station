@@ -10,7 +10,7 @@
     path: /etc/ansible
     mode: 0644
     state: directory
-  become: yes
+  become: true
 
 - name: Symlink /usr/local/etc/ansible to /etc/ansible.
   ansible.builtin.file:
