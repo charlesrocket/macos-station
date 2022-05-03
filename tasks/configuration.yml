@@ -111,7 +111,6 @@
     state: present
   loop:
     - {domain: com.apple.Safari.SandboxBroker, name: ShowDevelopMenu, type: int, value: 1}
-    - {domain: com.apple.Safari, name: AutoOpenSafeDownloads, type: int, value: 0}
   register: tuneapps
   when: configure_apps
   tags:
